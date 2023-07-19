@@ -1,5 +1,5 @@
 function nameValidation(name) {
-    let pattern = /^([a-z][A-Z]*)+ ([a-z][A-Z]*)/
+    let pattern = /^([A-Z]|[a-z]*)+ ([A-Z]|[a-z]*)+/
     return pattern.test(name)
 };
 
@@ -9,7 +9,14 @@ function emailValidation(email) {
     
 };
 
+
+function passwordValidation(password){
+    return password.length>=6?true:false;
+}
 function newPasswordValidation(password,confirmed_password) {
+    console.log(password)
+    console.log(confirmed_password)
+
     if (password===confirmed_password) {
         return true;
 
