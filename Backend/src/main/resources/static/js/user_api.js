@@ -28,9 +28,9 @@ function createUser() {
             if (newPasswordValidation(password,confirmedPassword) ) {
                 if(!getUserByEmail(email)){
                     user ={
-                        userName:name,
-                        userEmail:email,
-                        userPassword: password
+                        name:name,
+                        email:email,
+                        password: password
                     };
 
                 let body = JSON.stringify(user);
@@ -86,10 +86,10 @@ function validateLogin() {
             })
             .done(function(response){
                 console.log(response)
-                if(response)
-                    alert("Usuario con ingreso correcto")
+                if(response.id)
+                    alert("Bienvenido " + response.name)
                  else
-                    alert("Usuario con ingreso incorrecto")
+                    alert("No existe un usuario")
                 //TODO redirect to profile
             })
             .fail(function(jqXHR,textStatus,errorThrown){
