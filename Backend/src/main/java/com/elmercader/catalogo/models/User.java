@@ -13,11 +13,11 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(length = 80,nullable = false)
-    private String userName;
+    private String name;
     @Column(length = 50,nullable = false,unique = true)
-    private String userEmail;
+    private String email;
     @Column(length = 50,nullable = false)
-    private String userPassword;
+    private String password;
 
     /**
      * Get Id user
@@ -33,32 +33,32 @@ public class User implements Serializable {
      * Get name User
      * @return
      */
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
     /**
      * Set name User
-     * @param userName
+     * @param name
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
      * Get Email User
      * @return
      */
-    public String getUserEmail() {
-        return userEmail;
+    public String getEmail() {
+        return email;
     }
 
     /**
      * Set Email User
-     * @param userEmail
+     * @param email
      */
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
@@ -66,15 +66,15 @@ public class User implements Serializable {
      * @return
      */
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getPassword() {
+        return password;
     }
 
     /**
      * Set Password User
-     * @param userPassword
+     * @param password
      */
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
