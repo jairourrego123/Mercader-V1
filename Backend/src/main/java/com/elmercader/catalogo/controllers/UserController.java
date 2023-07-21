@@ -16,19 +16,42 @@ public class UserController {
     @Autowired
     private UserServices userServices;
 
+    /**
+     * Get UserAll
+     * @return List
+     */
     @GetMapping("/all")
     public List<User> getUserAll(){
         return userServices.getAllUsers();
     }
+
+    /**
+     * Get User By Emial
+     * @param email
+     * @return Boolean
+     */
     @GetMapping("/{email}")
     public Boolean getUserByEmail(@PathVariable("email") String email){
         return userServices.getUserByEmail(email);
     }
+
+    /**
+     * Validate Login
+     * @param email
+     * @param password
+     * @return Optional User
+     */
     @GetMapping("/{email}/{password}")
     public Optional<User> validateUserLogin(@PathVariable("email")String email,@PathVariable("password")String password){
         return userServices.validateUserLogin(email,password);
     }
-    @PostMapping("/new")
+
+    /**
+     * Create New User
+     * @param user
+     * @return User
+     */
+    @PostMapping("/all")
     @ResponseStatus(HttpStatus.CREATED)
     public User insertUser(@RequestBody User user){
         return userServices.saveUser(user);
