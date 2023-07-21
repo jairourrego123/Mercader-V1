@@ -12,12 +12,13 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(length = 80,nullable = false)
-    private String name;
     @Column(length = 50,nullable = false,unique = true)
     private String email;
     @Column(length = 50,nullable = false)
     private String password;
+
+    @Column(length = 80,nullable = false)
+    private String name;
 
     /**
      * Get Id user
