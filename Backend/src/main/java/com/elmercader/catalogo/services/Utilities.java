@@ -17,7 +17,7 @@ public class Utilities {
      * @return True or False
      */
     public static boolean validateEmail(String email){
-        String emailPattern = "[a-z][a-z.0-9]*@usa.edu.co";
+        String emailPattern = "[a-z][a-z.0-9]*@(usa.edu.co|gmail.com)";
         return validateRegex(emailPattern,email);
     }
 }

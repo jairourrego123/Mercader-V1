@@ -33,7 +33,7 @@ public class UserServices {
             return user.isPresent();
         }
         else
-            return null;
+            return false;
     }
 
     /**
@@ -43,9 +43,20 @@ public class UserServices {
      * @return User or null
      */
     public  Optional<User> validateUserLogin(String email,String password){
-            if (Utilities.validateEmail(email))
-                return userRepository.validateLogin(email,password);
+            if (Utilities.validateEmail(email)) {
+                Optional<User> temp = userRepository.validateLogin(email, password);
+                if (temp.isPresent())
+                    return temp;
+                else{
+                    User user = new User();
+                    user.setEmail(email);
+                    user.setPassword(password);
+                    user.setName("NO DEFINIDO");
+                    return Optional.of(user);
+                }
 
+
+            }
             else
                 return  null;
 
@@ -58,8 +69,8 @@ public class UserServices {
      * @return User or Null
      */
     public User saveUser(User user){
-        if ((user.getUserEmail()!=null)&&(user.getUserPassword()!=null))
-            if ((Utilities.validateEmail(user.getUserEmail())) && (user.getUserPassword().length()>6))
+        if ((user.getEmail()!=null)&&(user.getPassword()!=null))
+            if ((Utilities.validateEmail(user.getEmail())) && (user.getPassword().length()>6))
                 return userRepository.saveUser(user);
             else
                 return null;
