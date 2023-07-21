@@ -14,13 +14,22 @@ footer{
     
     background-color:#1F6E8C ;
     color: white;
+    position:absolute;
+    bottom:0;
+    width:100%;
+
 
 }
 label{
     font-size: 15px;
+    text-aline:right
+}
+.container{
+    padding-top:1%
 }
 input{
     background-color: rgba(165, 200, 195, 1);
+    text-aline:left
 }
 .button-form{
     border: 2px solid rgba(165, 200, 195, 1);
@@ -28,8 +37,12 @@ input{
     background-color: rgba(14, 41, 84, 1);
     color: rgba(145, 180, 175, 1);
     width: 100px;
+    text-aline:center;
 }
 .form-messsage{
     font-size: 10px;
     opacity: 0.5;
+}
+#register{
+    text-aline:center;
 }
