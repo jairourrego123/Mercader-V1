@@ -4,7 +4,6 @@ import com.elmercader.catalogo.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 @Repository
@@ -26,7 +25,7 @@ public class UserRepository {
      * @return Optional User
      */
     public Optional<User> getByEmail(String email){
-        return userCRUDRepository.findByUserEmail(email);
+        return userCRUDRepository.findByEmail(email);
     }
 
     /**
